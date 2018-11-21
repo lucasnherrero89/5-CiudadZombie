@@ -7,6 +7,8 @@ texto COMPLETAR que deben completarse segun lo indique la consigna.
 
 El objeto Juego contiene mucho codigo. Tomate tu tiempo para leerlo tranquilo
 y entender que es lo que hace en cada una de sus partes. */
+var x = 400;
+var y = 30;
 
 var Juego = {
   // Aca se configura el tamanio del canvas del juego
@@ -22,7 +24,7 @@ var Juego = {
     de ejemplo, pero podras agregar muchos mas. */
     new Obstaculo("imagenes/valla_horizontal.png", 70, 430, 30, 30, 1),
     new Obstaculo("imagenes/valla_vertical.png", 140, 430, 30, 30, 1),
-    new Obstaculo("imagenes/valla_vertical.png", 400, 200, 30, 30, 1)
+    new Obstaculo("imagenes/valla_vertical.png", 400, x, y, 30, 1)
   ],
   /* Estos son los bordes con los que se puede chocar, por ejemplo, la vereda.
    Ya estan ubicados en sus lugares correspondientes. Ya aparecen en el mapa, ya

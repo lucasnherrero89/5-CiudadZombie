@@ -37,10 +37,8 @@ var Jugador = {
   },
 
   // ME GUSTARIA QUE APAREZCA UN ELEMENTO CON LA CANTIDAD DE VIDAS RESTANTES EN EL MEDIO DE LA PANTALLA Y SE VAYA DESVANECIENDO (COMO POMPAS DE JABÓN)
-  perderVida: function(cant) {
-    this.vidas--;
+  perderVidas = function(cant) {
+    this.vidas = this.vidas - cant;
     alert(`Perdiste una vida, te quedan ${this.vidas}`);
   }
-  // Hay que agregar lo que falte al jugador: movimientos, perdida de vidas,
-  // y todo lo que haga falta para que cumpla con sus responsabilidades
 };

@@ -18,13 +18,14 @@ var Juego = {
   vidasInicial: Jugador.vidas,
   // Indica si el jugador gano
   ganador: false,
-
+  x: 320,
+  y: 50,
   obstaculosCarretera: [
     /*Aca se van a agregar los obstaculos visibles. Tenemos una valla horizontal
     de ejemplo, pero podras agregar muchos mas. */
     new Obstaculo("imagenes/valla_horizontal.png", 70, 430, 30, 30, 1),
     new Obstaculo("imagenes/valla_vertical.png", 140, 430, 30, 30, 1),
-    new Obstaculo("imagenes/valla_vertical.png", 400, x, y, 30, 1)
+    new Obstaculo("imagenes/valla_horizontal.png", 400, 700, 15, 30, 1)
   ],
   /* Estos son los bordes con los que se puede chocar, por ejemplo, la vereda.
    Ya estan ubicados en sus lugares correspondientes. Ya aparecen en el mapa, ya
@@ -249,7 +250,7 @@ Juego.terminoJuego = function() {
   return this.jugador.vidas <= 0;
 };
 
-/* Se gana el juego si se sobre pasa cierto altura y */
+/* Se gana el juego si se sobrepasa cierto altura y */
 Juego.ganoJuego = function() {
   return this.jugador.y + this.jugador.alto > 530;
 };
@@ -259,6 +260,7 @@ Juego.iniciarRecursos();
 // Activa las lecturas del teclado al presionar teclas
 // Documentacion: https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener
 document.addEventListener("keydown", function(e) {
+  e.preventDefault()
   var allowedKeys = {
     37: "izq",
     38: "arriba",
